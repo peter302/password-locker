@@ -20,4 +20,12 @@ def password_generation():
 
 def new_credentials(user_name,web_site,account_name,password):
     new_credential=Credentials(user_name,web_site,account_name,password)
-    return new_credential    
+    return new_credential
+
+def save_new_credentials(credential):
+    "' a function to save a new credential'"
+    Credentials.save_credentials(credential)
+
+def display_credentials(user_name):
+    "'a function to display a newly created credentials'"
+    Credentials.show_credentials(user_name)
