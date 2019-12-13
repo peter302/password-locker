@@ -6,3 +6,8 @@ import pyperclip,string,random
          self.f_name=f_name
          self.l_name=l_name
          self.password=password
+    def user_save(self):
+        "a method to save a new user object when ceated"
+        User.user_list.append(self)
+
+             
