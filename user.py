@@ -14,7 +14,7 @@ class Credentials:
         "this class will hold users details including names and passwords for user's site plus funtions and method to alter those dtails"
 
         Credentials_list=[]
-        user_credetials_list=[]
+        user_credentials_list=[]
         @classmethod
         def user_auth(cls,f_name,password):
             '''this method will authenticate user'''
@@ -36,7 +36,7 @@ class Credentials:
             Credentials.Credentials_list.append(self)
         def pass_gen(pass_size=6,char=string.ascii_uppercase+string.ascii_lowercase+string.digits):
             "this function will generate a password if user chooses automatic pass word generation"
-            pass_choice=''.join(random.choice(char) for _ in range(size))
+            pass_choice=''.join(random.choice(char) for _ in range(pass_size))
             return pass_choice
 
         @classmethod
@@ -56,4 +56,7 @@ class Credentials:
                 if k.web_site==web_site:
                     return k
 
-        def copy(cls,)            
+        def copy_site(cls,web_site):
+            "class methods to copy a site name to our clip board"
+            copy_credentials=Credentials.search_site_name(web_site)
+            return pyperclip.copy(copy_credentials.password)
