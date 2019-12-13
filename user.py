@@ -10,4 +10,16 @@ import pyperclip,string,random
         "a method to save a new user object when ceated"
         User.user_list.append(self)
 
-             
+    class Credentials:
+        "this class will hold users details including names and passwords for user's site plus funtions and method to alter those dtails"
+
+        Credentials_list=[]
+        user_credetials_list=[]
+        @classmethod
+        def user_auth(cls,f_name,password):
+            '''this method will authenticate user'''
+            loged_user=''
+            for user in User.user_list:
+                if(user.f_name==f_name and user.password==password):
+                    loded_user=user.f_name
+                    return loged_user
