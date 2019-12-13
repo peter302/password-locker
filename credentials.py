@@ -18,4 +18,6 @@ def password_generation():
     new_pass=Credentials.pass_gen()
     return new_pass
 
-    
+def new_credentials(user_name,web_site,account_name,password):
+    new_credential=Credentials(user_name,web_site,account_name,password)
+    return new_credential    
