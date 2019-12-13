@@ -10,7 +10,7 @@ import pyperclip,string,random
         "a method to save a new user object when ceated"
         User.user_list.append(self)
 
-    class Credentials:
+class Credentials:
         "this class will hold users details including names and passwords for user's site plus funtions and method to alter those dtails"
 
         Credentials_list=[]
@@ -29,4 +29,12 @@ import pyperclip,string,random
              self.user_name=user_name
              self.web_site=web_site
              self.account_name=account_name
-             self.password=password            
+             self.password=password
+
+        def save_credentials(self):
+            "this method will save a newly user created credentials"
+            Credentials.Credentials_list.append(self)
+        def pass_gen(pass_size=6,char=string.ascii_uppercase+string.ascii_lowercase+string.digits):
+            "this function will generate a password if user chooses automatic pass word generation"
+            pass_choice=''.join(random.choice(char) for _ in range(size))
+            return pass_choice
