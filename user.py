@@ -50,4 +50,10 @@ class Credentials:
             return user_credetials_list
 
         @classmethod
-        def find_by_site_name(cls,web_site):
+        def search_site_name(cls,web_site):
+            "this method will search a web_site by name"
+            for k in cls.Credentials_list:
+                if k.web_site==web_site:
+                    return k
+
+        def copy(cls,)            
