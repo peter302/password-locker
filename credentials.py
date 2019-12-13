@@ -8,4 +8,7 @@ def create_new_user(first_name,last_name,password):
  def save_user(user):
      '''a function to save a newly created user'''
      User.user_save(user)
-     
+  def authenticate_user(f_name,password):
+      '''function to authenticate user before accontion creation'''
+      qualify_user=Credentials.user_auth(f_name,password)
+    return qualify_user       
