@@ -38,3 +38,16 @@ class Credentials:
             "this function will generate a password if user chooses automatic pass word generation"
             pass_choice=''.join(random.choice(char) for _ in range(size))
             return pass_choice
+
+        @classmethod
+
+        def show_credentials(cls,user_name):
+            "this method will show all credentials stored for the loged user"
+            for j in cls.user_credetials_list:
+                if  j.user_name==user_name:
+                    user_credetials_list.append(j)
+
+            return user_credetials_list
+
+        @classmethod
+        def find_by_site_name(cls,web_site):
