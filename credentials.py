@@ -29,3 +29,9 @@ def save_new_credentials(credential):
 def display_credentials(user_name):
     "'a function to display a newly created credentials'"
     Credentials.show_credentials(user_name)
+
+def credential_copy(web_site):
+    "function to copy new credentials to clipboard"
+    return Credentials.copy_site(web_site)
+
+        
