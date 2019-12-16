@@ -19,3 +19,17 @@ class TestUser(unittest.TestCase):
         self.new_user.user_save()
         self.assertEqual(len(user.user_list),1)
 class TestCredential(unittest.TestCase):
+    "this test class defines twst cases for credentials class behaviours"
+    def test_user_auth(self):
+        '''this method will verify whether the authentication method is working succesfuly'''
+        self.new_user=User('peter','kuria','0000')
+        self.new_user.user_save()
+        w_user=User('moses','kuria','0000')
+        w_user.user_save()
+
+        for user in User.user_list:
+            if user.f_name==w_user.f_name and user.password==w_user.password:
+                current_user=user.first_name
+        return current_user
+        self.assertEqual(current_user,Credentials.user_auth(w_user.password,w_user.f_name))
+                
