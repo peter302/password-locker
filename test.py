@@ -35,3 +35,16 @@ class TestCredential(unittest.TestCase):
     def setUp(self):
         ''' this method runs before each credential is tested'''
         self.m_credential=Credentials('peter','twitter','pkush','0000')
+
+    def test_init_(self):
+        '''this methos checks if the initialization of credentials isproperly done'''
+        self.assertEqual(self.m_credential.user_name,'peter')
+        self.assertEqual(self.m_credential.web_site,'twitter')
+        self.assertEqual(self.m_credential.account_name,'pkush')
+        self.assertEqual(self.m_credential.password,'0000')
+    def test_save_credentials(self):
+        '''this method checks whether credentials are succesfuly saved'''
+        self.m_credential.save_credentials()
+        linkedin=Credential('june','linkedin','peter','0000')
+        linkedin.save_credentials()
+        self.assertEqual(len(Credentials.Credentials_list),2)        
