@@ -32,4 +32,6 @@ class TestCredential(unittest.TestCase):
                 current_user=user.first_name
         return current_user
         self.assertEqual(current_user,Credentials.user_auth(w_user.password,w_user.f_name))
-                
+    def setUp(self):
+        ''' this method runs before each credential is tested'''
+        self.m_credential=Credentials('peter','twitter','pkush','0000')
