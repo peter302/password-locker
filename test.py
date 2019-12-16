@@ -52,10 +52,10 @@ class TestCredential(unittest.TestCase):
         '''this mehod clears credentials after each test'''
         Credentials.Credentials_list=[]
         User.user_list=[]
-   def test        
+   def test_show_credentials(self):
         self.m_credential.save_credentials()
         linkedin=Credentials('june','linkedin','peter','0000')
         linkedin.save_credentials()
         facebook=Credentials('peter','facebook','bengo','0000')
         facebook.save_credentials()
-        self.assertEqual(len(Credentials.))
+        self.assertEqual(len(Credentials.show_credentials(linkedin.user_name)),2)
