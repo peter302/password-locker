@@ -93,23 +93,23 @@ def main():
                               print(" ")
                               print("-"*60)
                               print("please chose an option for entering password:\n ep-existing password\n gp-generate new password\n ex-exit")
-                              password_choice=input('Enter an option:').lower().strip(
+                              password_choice=input('Enter an option:').lower().strip()
                               print("-"*60)
                               if password_choice=='ep':
                                  print(" ")
                                  password=input('Enter your password').strip()
                                  break
-                             elif password_choice=='gp':
+                              elif password_choice=='gp':
                                  password=password_generation()
                                  break
-                             elif password_choice=='ex':
+                              elif password_choice=='ex':
                                   break
-                             else :
+                              else :
                                  print('oops!wrong option entered.Try again')
-                        save_new_credentials(new_credentials(user_name,web_site,account_name,password))
-                        print(' ')
-                        print(f'Credential Credential: web_site: {web_site} -Account Name:{account_name}-password:{password})
-                        print(' ')
+                           save_new_credentials(new_credentials(user_name,web_site,account_name,password))
+                           print(' ')
+                           print(f'Credential Credential: web_site: {web_site} -Account Name:{account_name}-password:{password})
+                           print(' ')
                     elif code== 'disp':
                         print(' ')
                         if show_credentials(user_name):

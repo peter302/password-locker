@@ -24,7 +24,7 @@ class Credentials:
                     return loged_user
 
         def __init__(self,user_name,web_site,account_name,password):
-            "this method initializes our credentials class with the propertis for user credentials"
+             "this method initializes our credentials class with the propertis for user credentials"
              self.user_name=user_name
              self.web_site=web_site
              self.account_name=account_name
