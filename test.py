@@ -59,3 +59,6 @@ class TestCredential(unittest.TestCase):
         facebook=Credentials('peter','facebook','bengo','0000')
         facebook.save_credentials()
         self.assertEqual(len(Credentials.show_credentials(linkedin.user_name)),2)
+    def test_search_site_name(self):
+        '''this method checks whether the searched credentials are corretly returned'''
+             
