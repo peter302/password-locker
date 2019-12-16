@@ -61,4 +61,23 @@ class TestCredential(unittest.TestCase):
         self.assertEqual(len(Credentials.show_credentials(linkedin.user_name)),2)
     def test_search_site_name(self):
         '''this method checks whether the searched credentials are corretly returned'''
-             
+        self.m_credential.save_credentials()
+        linkedin=Credentials('june','linkedin','peter','0000')
+        linkedin.save_credentials()
+        credentials_returned=Credential.search_site_name('linkedin')
+        self.assertEqual(credentials_returned,linkedin)
+
+    def test_copy_site(self):
+        '''this checks if credetilas copied are the correct ones'''
+        self.m_credential.save_credentials()
+        linkedin=Credentials('june','linkedin','peter','0000')
+        linkedin.save_credentials()
+        search_credential=None
+        for credetial in Credentials.user_credentials_list:
+            search_credential=Credential.search_site_name(credetial.web_site)
+            return pyperclip.copy(search_credential.password)
+        Credentials.copy_site(self.m_credential.web_site)
+        self.assertEqual('0000',pyperclip.paste())
+        print(pyperclip.paste())
+if __name__==' __main__':
+    unittest.main(verbosity=2)                
