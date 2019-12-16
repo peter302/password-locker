@@ -45,6 +45,17 @@ class TestCredential(unittest.TestCase):
     def test_save_credentials(self):
         '''this method checks whether credentials are succesfuly saved'''
         self.m_credential.save_credentials()
-        linkedin=Credential('june','linkedin','peter','0000')
+        linkedin=Credentials('june','linkedin','peter','0000')
         linkedin.save_credentials()
-        self.assertEqual(len(Credentials.Credentials_list),2)        
+        self.assertEqual(len(Credentials.Credentials_list),2)
+    def tearDown(self):
+        '''this mehod clears credentials after each test'''
+        Credentials.Credentials_list=[]
+        User.user_list=[]
+   def test        
+        self.m_credential.save_credentials()
+        linkedin=Credentials('june','linkedin','peter','0000')
+        linkedin.save_credentials()
+        facebook=Credentials('peter','facebook','bengo','0000')
+        facebook.save_credentials()
+        self.assertEqual(len(Credentials.))
